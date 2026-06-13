@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhoneZone - Mua điện thoại thông minh chất - Giá hấp dẫn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&subset=vietnamese" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/shop.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <span>Giao hàng toàn quốc</span>
+        <span>Kiểm tra hàng trước khi thanh toán</span>
+        <span>Hotline: 1800 1234</span>
+        <a href="./admin.html">Quản trị sản phẩm</a>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="brand" href="./index.html"><span></span>Phone<b>Zone</b></a>
+        <button class="catalog-btn" type="button">Danh mục</button>
+        <label class="search-box">
+          <input type="search" placeholder="Bạn muốn tìm gì?" />
+          <button type="button" aria-label="Tìm kiếm">⌕</button>
+        </label>
+        <a class="account-link" href="./admin.html">
+          <strong>Đăng nhập</strong>
+          <span>Tài khoản</span>
+        </a>
+        <button class="cart-toggle" id="cartToggle" aria-label="Mở giỏ hàng">
+          <span id="cartCount">0</span>
+          Giỏ hàng
+        </button>
+      </div>
+    </header>
+
+    <main class="container home-page">
+      <section class="hero-grid">
+        <aside class="category-menu">
+          <a href="#products">Điện thoại</a>
+          <a href="#products">Phụ kiện</a>
+          <a href="#products">Máy tính bảng</a>
+          <a href="#products">Đồng hồ thông minh</a>
+          <a href="#products">Tai nghe</a>
+          <a href="#products">Sạc dự phòng</a>
+          <a class="is-sale" href="#products">Khuyến mãi</a>
+        </aside>
+
+        <section class="hero-banner hero-carousel" id="heroCarousel" aria-label="Sản phẩm nổi bật">
+          <article class="hero-slide is-active hero-slide--iphone">
+            <div>
+              <p class="eyebrow">Apple mới nhất</p>
+              <h1>iPhone 17 Pro Max</h1>
+              <p>Thiết kế nổi bật. Hiệu năng dẫn đầu.</p>
+              <strong>Từ 36.990.000đ</strong>
+              <a class="primary-btn" href="#products">Mua ngay</a>
+            </div>
+            <img src="https://cdn2.cellphones.com.vn/x/media/catalog/product/i/p/iphone-17-pro-max_3.jpg" alt="iPhone 17 Pro Max" />
+          </article>
+          <article class="hero-slide hero-slide--samsung">
+            <div>
+              <p class="eyebrow">Galaxy AI</p>
+              <h1>Samsung Galaxy S26 Ultra</h1>
+              <p>Màn hình lớn. Camera sắc nét. Sức mạnh Ultra.</p>
+              <strong>Từ 32.990.000đ</strong>
+              <a class="primary-btn" href="#products">Mua ngay</a>
+            </div>
+            <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/l/slider-samsung-galaxy-s26-ultra-2_1.jpg" alt="Samsung Galaxy S26 Ultra" />
+          </article>
+          <article class="hero-slide hero-slide--xiaomi">
+            <div>
+              <p class="eyebrow">Tốc độ mới</p>
+              <h1>Xiaomi 17T 5G</h1>
+              <p>Kết nối 5G, sạc nhanh và camera linh hoạt.</p>
+              <strong>Từ 14.990.000đ</strong>
+              <a class="primary-btn" href="#products">Mua ngay</a>
+            </div>
+            <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/x/i/xiaomi-17t-30.jpg" alt="Xiaomi 17T 5G" />
+          </article>
+          <div class="slider-dots" id="heroDots" aria-label="Chọn banner">
+            <button class="is-active" type="button" aria-label="Xem iPhone 17 Pro Max"></button>
+            <button type="button" aria-label="Xem Samsung Galaxy S26 Ultra"></button>
+            <button type="button" aria-label="Xem Xiaomi 17T 5G"></button>
+          </div>
+        </section>
+      </section>
+
+      <section class="benefit-strip">
+        <div><strong>Giao hàng</strong><span>toàn quốc</span></div>
+        <div><strong>Thanh toán</strong><span>khi nhận hàng</span></div>
+        <div><strong>Trả góp</strong><span>0% lãi suất</span></div>
+        <div><strong>Bảo hành</strong><span>chính hãng</span></div>
+        <div><strong>Đổi trả</strong><span>trong 7 ngày</span></div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <h2>Danh mục nổi bật</h2>
+          <a href="#products">Xem tất cả</a>
+        </div>
+        <div class="category-grid">
+          <button class="category-card" type="button" data-filter="iphone">
+            <img src="https://cdn.tgdd.vn/Products/Images/42/342679/iphone-17-pro-max-cam-thumb-600x600.jpg" alt="iPhone" />
+            <span>iPhone</span>
+          </button>
+          <button class="category-card" type="button" data-filter="samsung">
+            <img src="https://cdn.tgdd.vn/Products/Images/42/307174/samsung-galaxy-s24-ultra-grey-thumbnew-600x600.jpg" alt="Samsung" />
+            <span>Samsung</span>
+          </button>
+          <button class="category-card" type="button">
+            <img src="https://cdn.tgdd.vn/Products/Images/42/367002/xiaomi-17t-5g-tim-thumb-600x600.jpg" alt="Xiaomi" />
+            <span>Xiaomi</span>
+          </button>
+          <button class="category-card" type="button">
+            <img src="https://cdn.tgdd.vn/Products/Images/42/365402/oppo-find-x9s-cam-thumb-1-600x600.jpg" alt="OPPO" />
+            <span>OPPO</span>
+          </button>
+          <button class="category-card" type="button">
+            <img src="https://cdn.tgdd.vn/Products/Images/42/363408/vivo-x300-ultra-xanh-thumb-1-600x600.jpg" alt="Vivo" />
+            <span>Vivo</span>
+          </button>
+          <button class="category-card" type="button">
+            <img src="https://cdn.tgdd.vn/Products/Images/42/363438/realme-p4-power-5g-12gb-256gb-cam-thumb-1-2-600x600.jpg" alt="Realme" />
+            <span>Realme</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section-block" id="products">
+        <div class="section-heading section-heading--filter">
+          <h2>Sản phẩm nổi bật</h2>
+          <label class="field field--inline">
+            <span>Lọc sản phẩm</span>
+            <select id="typeFilter">
+              <option value="all">Tất cả</option>
+              <option value="iphone">iPhone</option>
+              <option value="samsung">Samsung</option>
+            </select>
+          </label>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+
+      <section class="promo-grid">
+        <article class="promo-card promo-card--dark">
+          <h3>Thu cũ đổi mới<br />Trợ giá đến 5 triệu</h3>
+          <a href="#products">Xem ngay</a>
+        </article>
+        <article class="promo-card promo-card--light">
+          <h3>Phụ kiện chính hãng<br />Giảm đến 30%</h3>
+          <a href="#products">Xem ngay</a>
+        </article>
+        <article class="promo-card promo-card--gold">
+          <h3>Trả góp 0% lãi suất<br />Duyệt nhanh 5 phút</h3>
+          <a href="#products">Xem ngay</a>
+        </article>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <section>
+          <h3>Thông tin liên hệ</h3>
+          <p>PhoneZone Store</p>
+          <p>Hotline: 1800 1234</p>
+          <p>Email: support@phonezone.vn</p>
+          <p>Địa chỉ: 123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</p>
+        </section>
+        <section>
+          <h3>Phương thức thanh toán</h3>
+          <p>Thanh toán khi nhận hàng</p>
+          <p>Thẻ ATM, Visa, Mastercard</p>
+          <p>Ví điện tử MoMo, ZaloPay</p>
+          <p>Trả góp 0% qua đối tác tài chính</p>
+        </section>
+        <section>
+          <h3>Chính sách giao nhận</h3>
+          <p>Giao hàng toàn quốc</p>
+          <p>Miễn phí giao hàng cho đơn từ 2.000.000đ</p>
+          <p>Kiểm tra hàng trước khi thanh toán</p>
+          <p>Thời gian giao hàng từ 1-5 ngày</p>
+        </section>
+        <section>
+          <h3>Chính sách hoàn trả</h3>
+          <p>Đổi trả trong 7 ngày</p>
+          <p>Sản phẩm còn nguyên hộp và phụ kiện</p>
+          <p>Bảo hành chính hãng theo nhà sản xuất</p>
+          <p>Hỗ trợ kỹ thuật sau mua hàng</p>
+        </section>
+      </div>
+    </footer>
+
+    <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+      <div class="cart-panel__header">
+        <h2>Giỏ hàng</h2>
+        <button class="icon-btn" id="closeCart" aria-label="Đóng giỏ hàng">×</button>
+      </div>
+      <div class="cart-table-wrap">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>SL</th>
+              <th>Tiền</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cartBody"></tbody>
+        </table>
+      </div>
+      <div class="cart-summary">
+        <span>Tổng tiền</span>
+        <strong id="cartTotal">0đ</strong>
+      </div>
+      <button class="primary-btn" id="checkoutBtn">Thanh toán</button>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/models/Product.js"></script>
+    <script src="./js/services/productService.js"></script>
+    <script src="./js/customer.js"></script>
+  </body>
+</html>
