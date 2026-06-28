@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản trị - PhoneZone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&subset=vietnamese" rel="stylesheet" />
+    <link rel="stylesheet" href="./asset/css/admin.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <span>Giao hàng toàn quốc</span>
+        <span>Kiểm tra hàng trước khi thanh toán</span>
+        <span>Hotline: 1800 1234</span>
+        <a href="./index.html">Cửa hàng</a>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header__inner header__inner--admin">
+        <a class="brand" href="./index.html"><span></span>Phone<b>Zone</b></a>
+        <button class="catalog-btn" type="button">Quản trị</button>
+        <a class="account-link" href="./index.html">
+          <strong>Cửa hàng</strong>
+          <span>Trang bán hàng</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="container admin-page">
+      <section class="admin-hero">
+        <div>
+          <p class="eyebrow">Dashboard</p>
+          <h1>Quản lý sản phẩm PhoneZone</h1>
+          <p>Thêm, cập nhật, xóa, tìm kiếm và sắp xếp sản phẩm.</p>
+        </div>
+        <button class="admin-login-btn" type="button">Đăng nhập</button>
+      </section>
+
+      <section class="admin-layout">
+        <form class="product-form" id="productForm" novalidate>
+          <input type="hidden" id="productId" />
+          <h2 id="formTitle">Thêm sản phẩm</h2>
+          <label class="field">
+            <span>Tên sản phẩm</span>
+            <input id="name" type="text" placeholder="iPhone 15 Pro Max" />
+            <small id="nameError"></small>
+          </label>
+          <label class="field">
+            <span>Giá</span>
+            <input id="price" type="number" min="1" placeholder="34990000" />
+            <small id="priceError"></small>
+          </label>
+          <label class="field">
+            <span>Màn hình</span>
+            <input id="screen" type="text" placeholder="6.7 inch Super Retina XDR" />
+            <small id="screenError"></small>
+          </label>
+          <label class="field">
+            <span>Camera sau</span>
+            <input id="backCamera" type="text" placeholder="48MP + 12MP + 12MP" />
+            <small id="backCameraError"></small>
+          </label>
+          <label class="field">
+            <span>Camera trước</span>
+            <input id="frontCamera" type="text" placeholder="12MP" />
+            <small id="frontCameraError"></small>
+          </label>
+          <label class="field">
+            <span>Hình ảnh</span>
+            <input id="img" type="url" placeholder="https://..." />
+            <small id="imgError"></small>
+          </label>
+          <label class="field">
+            <span>Mô tả</span>
+            <textarea id="desc" rows="3" placeholder="Mô tả ngắn về sản phẩm"></textarea>
+            <small id="descError"></small>
+          </label>
+          <label class="field">
+            <span>Loại</span>
+            <select id="type">
+              <option value="">Chọn loại</option>
+              <option value="iphone">iPhone</option>
+              <option value="samsung">Samsung</option>
+            </select>
+            <small id="typeError"></small>
+          </label>
+          <div class="form-actions">
+            <button class="primary-btn" type="submit" id="saveBtn">Lưu sản phẩm</button>
+            <button class="secondary-btn" type="button" id="clearBtn">Xóa form</button>
+          </div>
+        </form>
+
+        <div class="admin-list">
+          <div class="list-controls list-controls--admin">
+            <div>
+              <p class="eyebrow">Danh sách</p>
+              <h2>Sản phẩm hiện tại</h2>
+            </div>
+            <div class="admin-filter-panel">
+              <label class="field admin-search-field">
+                <span>Tìm theo tên sản phẩm</span>
+                <div class="admin-search-box">
+                  <input id="searchInput" type="search" placeholder="Nhập tên sản phẩm cần tìm" />
+                  <button type="button" aria-label="Tìm kiếm">⌕</button>
+                </div>
+              </label>
+              <label class="field admin-sort-field">
+                <span>Sắp xếp giá</span>
+                <select id="sortSelect">
+                  <option value="default">Mặc định</option>
+                  <option value="asc">Giá tăng dần</option>
+                  <option value="desc">Giá giảm dần</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Tên</th>
+                  <th>Loại</th>
+                  <th>Giá</th>
+                  <th>Camera sau</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="admin-modal-backdrop" id="deleteModal" aria-hidden="true">
+      <section class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
+        <div class="admin-modal__icon">!</div>
+        <div class="admin-modal__content">
+          <p class="eyebrow">Xác nhận xóa</p>
+          <h2 id="deleteModalTitle">Xóa sản phẩm này?</h2>
+          <p>
+            Sản phẩm <strong id="deleteProductName"></strong> sẽ bị xóa khỏi MockAPI. Thao tác này không thể hoàn tác.
+          </p>
+        </div>
+        <div class="admin-modal__actions">
+          <button class="secondary-btn" type="button" id="cancelDeleteBtn">Hủy</button>
+          <button class="danger-btn" type="button" id="confirmDeleteBtn">Xóa sản phẩm</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./asset/js/config.js"></script>
+    <script src="./asset/js/models/Product.js"></script>
+    <script src="./asset/js/services/productService.js"></script>
+    <script src="./asset/js/admin.js"></script>
+  </body>
+</html>

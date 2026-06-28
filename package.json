@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "scss": "npm run scss:shop && npm run scss:admin",
+    "scss:shop": "npx sass --no-source-map asset/scss/shop.scss asset/css/shop.css",
+    "scss:admin": "npx sass --no-source-map asset/scss/admin.scss asset/css/admin.css",
+    "scss:watch:shop": "npx sass --watch asset/scss/shop.scss asset/css/shop.css",
+    "scss:watch:admin": "npx sass --watch asset/scss/admin.scss asset/css/admin.css"
+  },
+  "devDependencies": {
+    "sass": "^1.101.0"
+  }
+}
